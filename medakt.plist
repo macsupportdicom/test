@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>OnDemand</key>
+	<true/>
+	<key>catalogs</key>
+	<array>
+		<string>testing</string>
+		<string>production</string>
+	</array>
+	<key>category</key>
+	<string>Support</string>
+	<key>description</key>
+	<string>medakt</string>
+	<key>display_name</key>
+	<string>medakt</string>
+	<key>icon_name</key>
+	<string></string>
+	<key>installer_type</key>
+	<string>nopkg</string>
+	<key>minimum_os_version</key>
+	<string>10.7.0</string>
+	<key>name</key>
+	<string>medakt</string>
+	<key>postinstall_script</key>
+	<string>#!/bin/bash
+
+
+CURRENT_USER=`/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }'`
+
+touch /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "screen mode id:i:2" &gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "use multimon:i:1" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "session bpp:i:32" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "full address:s:ppsrv01" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "audiomode:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "username:s:" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "disable wallpaper:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "disable full window drag:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "disable menu anims:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "disable themes:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "alternate shell:s:" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "shell working directory:s:" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "authentication level:i:2" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "connect to console:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "gatewayusagemethod:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "disable cursor setting:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "allow font smoothing:i:1" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "allow desktop composition:i:1" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "redirectprinters:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "prompt for credentials on client:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "bookmarktype:i:3" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+echo "use redirection server name:i:0" &gt;&gt; /Users/"$CURRENT_USER"/Desktop/medakt.rdp
+
+exit 0
+
+</string>
+	<key>unattended_install</key>
+	<false/>
+	<key>uninstallable</key>
+	<true/>
+	<key>version</key>
+	<string>1.0</string>
+</dict>
+</plist>
